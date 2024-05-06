@@ -2,8 +2,12 @@
  "SCENE": {
     "ANIM": ["%Animation", "Idle"],
     "TEXT": [
-      "Hola es es el mundo, da inico a un juego, esta es la Hisria de una persona que le imploro al cielo. esta es la Hisria de un hombre",
-      "Este es un nuevo parrafo y quiero verlo muy bien, quiero que esta mierda funciones bien"
-    ]
+      "Da inico al juego, esta es la Hisria de una persona que le imploro al cielo.",
+      "Este es un nuevo parrafo"
+    ],
+    "EVENT": "event_finish",
+    "ANIM_2": ["%AnimationPosition", "knight_run"],
+    "EVENT_2": "event_finish",
+    "TEXT_2": ["Este Texto se reproduce solo despues de animacion"]
   }
 }

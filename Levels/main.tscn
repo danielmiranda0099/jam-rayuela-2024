@@ -141,9 +141,6 @@ grow_horizontal = 2
 grow_vertical = 0
 autowrap_mode = 2
 
-[node name="Timer" type="Timer" parent="AnimatedController"]
-wait_time = 0.05
-
 [node name="Animation" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 root_node = NodePath("../Sprite2D")
@@ -152,6 +149,7 @@ libraries = {
 }
 
 [node name="AnimationPosition" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_qb06h")
 }
@@ -167,5 +165,3 @@ position = Vector2(-50, 124)
 texture = ExtResource("3_rdqwx")
 hframes = 2
 vframes = 4
-
-[connection signal="timeout" from="AnimatedController/Timer" to="AnimatedController" method="_on_timer_timeout"]
