@@ -1,0 +1,9 @@
+{
+ "SCENE": {
+    "ANIM": ["%Animation", "Idle"],
+    "TEXT": [
+      "Hola es es el mundo, da inico a un juego, esta es la Hisria de una persona que le imploro al cielo. esta es la Hisria de un hombre",
+      "Este es un nuevo parrafo y quiero verlo muy bien, quiero que esta mierda funciones bien"
+    ]
+  }
+}
