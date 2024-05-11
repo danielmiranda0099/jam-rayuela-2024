@@ -26,6 +26,7 @@ window/size/viewport_height=301
 window/size/window_width_override=800
 window/size/window_height_override=600
 window/stretch/mode="viewport"
+window/defaults/default_clear_color="000000"
 
 [rendering]
 

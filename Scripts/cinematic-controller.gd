@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 signal ui_accept_next
 signal event_finish
@@ -21,7 +21,15 @@ func _process(_delta):
 		return
 
 	for item in data["SCENE"]:
+		print(item)
 		if not history_scene.has(item):
+			if(item.contains("TYPE") and $AnimationViewportContainer.visible == true):
+				$AnimationViewportContainer.visible = false
+				%Text.position = Vector2(-14, 35)
+			if(item.contains("TYPE") and data["SCENE"][item] == "cinematic" and $AnimationViewportContainer.visible == false):
+				$AnimationViewportContainer.visible = true
+				%Text.position = Vector2(-14, 147)
+
 			if(item.contains("ANIM")):
 				animation_controller(data["SCENE"][item])
 
@@ -30,12 +38,14 @@ func _process(_delta):
 
 			if(item.contains("EVENT")):
 				await event_finish
+
+			
 		
 		history_scene.append(item)
 	played_scene = true
 
 func animation_controller(data_animation):
-	var animation = get_node(data_animation[0]) as AnimationPlayer
+	var animation = get_node("AnimationViewportContainer/AnimationSubViewport/Cinematic/"+data_animation[0]) as AnimationPlayer
 	animation.play(data_animation[1])
 	await animation.animation_finished
 	event_finish.emit()
@@ -43,11 +53,12 @@ func animation_controller(data_animation):
 func text_typing_controller(texts):
 	for text in texts:
 		for letter in text:
-			$Text.text += letter
-			await get_tree().create_timer(0.05).timeout
+			%Text.text += letter
+			# await get_tree().create_timer(0.05).timeout
+			await get_tree().create_timer(0.01).timeout
 		
 		await ui_accept_next
-		$Text.text = ""
+		%Text.text = ""
 		await get_tree().create_timer(0.5).timeout
 	event_finish.emit()
 

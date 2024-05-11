@@ -2,12 +2,23 @@
  "SCENE": {
     "ANIM": ["%Animation", "Idle"],
     "TEXT": [
-      "Da inico al juego, esta es la Hisria de una persona que le imploro al cielo.",
+      "Da inico al juego, esta es la Historia de un hombre que le imploro al cielo. Da inico al juego, esta es la Historia de un hombre que le imploro al cielo.",
       "Este es un nuevo parrafo"
     ],
     "EVENT": "event_finish",
+
     "ANIM_2": ["%AnimationPosition", "knight_run"],
     "EVENT_2": "event_finish",
-    "TEXT_2": ["Este Texto se reproduce solo despues de animacion"]
+    
+    "TEXT_2": ["Este Texto se reproduce solo despues de animacion"],
+    "EVENT_3": "event_finish",
+
+    "TYPE": "text",
+    "TEXT_3": ["Todos los perros del vecindario empezaron a ladrar, mi familia no le dio importancia. En el notociero reportaron que el hecho ocurrio en todo el planeta,mis padres lo viero comoun hecho curioso, yo era un niño que podia saber. "],
+    "EVENT_4": "event_finish",
+
+    "TYPE_2": "cinematic",
+    "ANIM_3": ["%AnimationPosition", "knight_run"],
+    "TEXT_4": ["20 De Julio Año 202X"]
   }
 }
