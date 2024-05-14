@@ -7,8 +7,9 @@ var rate_progress: float
 var progressText: float
 
 var data: Dictionary = {} 
-var path_data = "res://Cinematics/open.json"
+@export var path_data: String
 
+# allows not execute an infinite loop when the scene is finished
 var played_scene: bool = false
 
 var history_scene: Array = []
@@ -51,12 +52,15 @@ func animation_controller(data_animation):
 	event_finish.emit()
 
 func text_typing_controller(texts):
+	%Text.text = ""
 	for text in texts:
 		for letter in text:
 			%Text.text += letter
-			# await get_tree().create_timer(0.05).timeout
-			await get_tree().create_timer(0.01).timeout
+			$Audio.play()
+			await get_tree().create_timer(0.06).timeout
 		
+		await get_tree().create_timer(0.3).timeout	
+		$AudioFinish.play()
 		await ui_accept_next
 		%Text.text = ""
 		await get_tree().create_timer(0.5).timeout

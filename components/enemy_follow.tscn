@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://xhukwkyu8eb5"]
+
+[ext_resource type="Texture2D" uid="uid://cgwtvw1lqgfo3" path="res://assets/sprites/Enemies/Cacodaemon Sprite Sheet.png" id="1_5a53t"]
+[ext_resource type="Script" path="res://Scripts/enemy_follow.gd" id="1_g5s0f"]
+
+[sub_resource type="Animation" id="Animation_cvki5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_l7xlu"]
+resource_name = "run"
+length = 1.2
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tymbn"]
+_data = {
+"RESET": SubResource("Animation_cvki5"),
+"run": SubResource("Animation_l7xlu")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_slyuv"]
+radius = 17.7169
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynukt"]
+radius = 28.3823
+
+[node name="EnemyFollow" type="CharacterBody2D"]
+position = Vector2(1, 0)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_g5s0f")
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+autoplay = "run"
+libraries = {
+"": SubResource("AnimationLibrary_tymbn")
+}
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_5a53t")
+hframes = 8
+vframes = 4
+frame = 1
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(4, 3)
+shape = SubResource("CircleShape2D_slyuv")
+
+[node name="Navigation" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(3.33333, 3.33333)
+shape = SubResource("CircleShape2D_ynukt")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

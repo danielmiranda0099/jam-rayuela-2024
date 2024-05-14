@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cd4tg0wvwdevc"]
+[gd_scene load_steps=3 format=3 uid="uid://cd4tg0wvwdevc"]
 
-[ext_resource type="PackedScene" uid="uid://dgk5ri4ljt3dr" path="res://Levels/cinematic_controller.tscn" id="1_batek"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_udnhq"]
+[ext_resource type="PackedScene" uid="uid://cir2wmrml1qj1" path="res://Levels/level_house.tscn" id="2_onf5o"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_udnhq")
 
-[node name="CinematicController" parent="." instance=ExtResource("1_batek")]
+[node name="ContentScenes" type="Node2D" parent="."]
+
+[node name="LevelHouse" parent="ContentScenes" instance=ExtResource("2_onf5o")]
