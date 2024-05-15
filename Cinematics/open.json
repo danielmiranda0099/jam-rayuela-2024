@@ -1,43 +1,73 @@
 {
- "SCENE": {
+  "SCENE": {
     "TYPE": "text",
-    "TEXT": ["20 De Julio Año 202X"],
-    "EVENT": "event_finish",
-
-    "TYPE_2": "cinematic",
-    "ANIM_2": ["%Animation", "Idle"],
-    "TEXT_2": ["Todos los perros del vecindario empezaron a ladrar, mi familia no le dio importancia. En el notociero reportaron que el hecho ocurrio en todo el planeta,mis padres lo viero comoun hecho curioso, yo era un niño que podia saber."],
-    "EVENT_2": "event_finish",
-
-    "TYPE_3": "text",
-    "TEXT_3": ["30 De Mayo Año 202X"],
-    "EVENT_3": "event_finish",
-
-    "TYPE_4": "cinematic",
-    "ANIM_4": ["%Animation", "Idle"],
-    "TEXT_4": ["Animales De Todo el mundo empezaron a actuar de ofrmas extrañas, los rebaños de obejas hacian circulos, los caballos se acostaban boca arriva, los aves formavan remolinos oscuros en el cielo. yo estaba En la escuela cuando sucedio, el gabster de mi aula se comio su cola. cuando le pregunte a mis padres ellos me respondieron que podria deverse al cambio climatico. ."],
-    "EVENT_4": "event_finish",
-
-    "TYPE_5": "text",
-    "TEXT_5": ["12 De Febrero Año 203X"],
-    "EVENT_5": "event_finish",
-
-    "TYPE_6": "cinematic",
-    "ANIM_6": ["%Animation", "Idle"],
-    "TEXT_6": ["Algunas especies de pajaros mueren y caen como lluvia del cielo, el repote solo dice que puede deverse a algun tipo de fluctuacion en los campios magneticos del planeta  algunas grupos salen a las calles a declarar que estas son señales del fin del mundo,  manifestaciones y sectas crecen"],
-    "EVENT_6": "event_finish",
-
-    "TYPE_7": "text",
-    "TEXT_7": ["7 De Octubre Año 203X"],
-    "EVENT_7": "event_finish",
-
-    "TYPE_8": "cinematic",
-    "ANIM_8": ["%Animation", "Idle"],
-    "TEXT_8": ["Era un domingo por la mañana, estaba en el patio jugando con firulais, de la nada se asusto y entro a la casa, de nuevo los perros de el vecindario empezaron a ladrar pero algo era diferente, senti un breve mareo y deje de escuchar el bullico de los perrros, en cambio un sonido a truenos metalicos  entro en mi cabeza no se si decir que aquello fue una voz pero se que algo me quiso decir o mas  bien algo quiso decir a la humanidad"],
-    "EVENT_8": "event_finish",
-
-    "TYPE_9": "text",
-    "TEXT_9": ["Desde el evento de la voz, Empezo un evento de paranoia colectiva, por una semana todos tuvimos una misma pesadilla que variva entre indivuduo pero en esencia era la misma, la voz de truenos metalicosa  de un ser gigantesto con miles de ojos y de forma indescrioptible", "Me desperte de la misma pesadila del ser de mil formas, asustado me dirigi al cuarto de mis padres"],
-    "EVENT_9": "event_finish"
+    "TEXT": [
+      "20 De Julio Año 202X"
+    ]
+  },
+  "SCENE_2": {
+    "TYPE": "cinematic",
+    "ANIM": [
+      "%Animation",
+      "Idle"
+    ],
+    "TEXT": [
+      "Todos los perros del vecindario empezaron a ladrar, mi familia no le dio importancia. En el notociero reportaron que el hecho ocurrio en todo el planeta,mis padres lo viero comoun hecho curioso, yo era un niño que podia saber."
+    ]
+  },
+  "SCENE_3": {
+    "TYPE": "text",
+    "TEXT": [
+      "30 De Mayo Año 202X"
+    ]
+  },
+  "SCENE_4": {
+    "TYPE": "cinematic",
+    "ANIM": [
+      "%Animation",
+      "Idle"
+    ],
+    "TEXT": [
+      "Animales De Todo el mundo empezaron a actuar de ofrmas extrañas, los rebaños de obejas hacian circulos, los caballos se acostaban boca arriva, los aves formavan remolinos oscuros en el cielo. yo estaba En la escuela cuando sucedio, el gabster de mi aula se comio su cola. cuando le pregunte a mis padres ellos me respondieron que podria deverse al cambio climatico. ."
+    ]
+  },
+  "SCENE_5": {
+    "TYPE": "text",
+    "TEXT": [
+      "12 De Febrero Año 203X"
+    ]
+  },
+  "SCENE_6": {
+    "TYPE": "cinematic",
+    "ANIM": [
+      "%Animation",
+      "Idle"
+    ],
+    "TEXT": [
+      "Algunas especies de pajaros mueren y caen como lluvia del cielo, el repote solo dice que puede deverse a algun tipo de fluctuacion en los campios magneticos del planeta  algunas grupos salen a las calles a declarar que estas son señales del fin del mundo,  manifestaciones y sectas crecen"
+    ]
+  },
+  "SCENE_7": {
+    "TYPE": "text",
+    "TEXT": [
+      "7 De Octubre Año 203X"
+    ]
+  },
+  "SCENE_8": {
+    "TYPE": "cinematic",
+    "ANIM": [
+      "%Animation",
+      "Idle"
+    ],
+    "TEXT": [
+      "Era un domingo por la mañana, estaba en el patio jugando con firulais, de la nada se asusto y entro a la casa, de nuevo los perros de el vecindario empezaron a ladrar pero algo era diferente, senti un breve mareo y deje de escuchar el bullico de los perrros, en cambio un sonido a truenos metalicos  entro en mi cabeza no se si decir que aquello fue una voz pero se que algo me quiso decir o mas  bien algo quiso decir a la humanidad"
+    ]
+  },
+  "SCENE_9": {
+    "TYPE": "text",
+    "TEXT": [
+      "Desde el evento de la voz, Empezo un evento de paranoia colectiva, por una semana todos tuvimos una misma pesadilla que variva entre indivuduo pero en esencia era la misma, la voz de truenos metalicosa  de un ser gigantesto con miles de ojos y de forma indescrioptible",
+      "Me desperte de la misma pesadila del ser de mil formas, asustado me dirigi al cuarto de mis padres"
+    ]
   }
 }
