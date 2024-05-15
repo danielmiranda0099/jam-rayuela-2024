@@ -37,6 +37,16 @@ func _process(_delta):
 			for key in scene_data.keys():
 				if (not scene_data_history.has(key)):
 					scene_data_history.append(key)
+
+					if(key.contains("TYPE") and scene_data[key] == "cinematic" and $AnimationViewportContainer.visible == false):
+						$AnimationViewportContainer.visible = true
+						%Text.position = Vector2(-14, 147)
+						%Text.set("theme_override_font_sizes/font_size", 10)
+					if(key.contains("TYPE") and scene_data[key] == "text" and $AnimationViewportContainer.visible == true):
+						$AnimationViewportContainer.visible = false
+						%Text.position = Vector2(-14, 35)
+						%Text.set("theme_override_font_sizes/font_size", 14)
+	
 					if(key.contains("TEXT")):
 						print(scene_data[key])
 						text_typing_controller(scene_data[key])
