@@ -102,11 +102,11 @@ func MagicEffect(area) -> void:
 
 	var tween: Tween = get_tree().create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	tween.tween_property(magic_effect, "scale", Vector2(1.7, 1.7), 1);
-	tween.tween_property(magic_effect, "scale", Vector2(0.1, 0.1), 1);
+	tween.tween_property(magic_effect, "scale", Vector2(1.7, 1.7), 4);
+	tween.tween_property(magic_effect, "scale", Vector2(0.1, 0.1), 4);
 	area.get_parent().queue_free()
 
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(9).timeout
 
 	var new_scene = load("res://Levels/cinematic_controller.tscn").instantiate()
 	new_scene.path_data = "res://Cinematics/test.json"

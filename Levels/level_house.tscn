@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://cir2wmrml1qj1"]
+[gd_scene load_steps=28 format=3 uid="uid://cir2wmrml1qj1"]
 
 [ext_resource type="Texture2D" uid="uid://dgeaob254pq3g" path="res://assets/sprites/top-down/house-interior/TopDownHouse_FloorsAndWalls.png" id="1_2pt7c"]
 [ext_resource type="Texture2D" uid="uid://dyrhhaux5r6l6" path="res://assets/sprites/top-down/house-interior/TopDownHouse_FurnitureState1.png" id="1_dlean"]
+[ext_resource type="Script" path="res://Scripts/level_house.gd" id="1_lo6tn"]
 [ext_resource type="Texture2D" uid="uid://1f1akvplrdpw" path="res://assets/sprites/top-down/house-interior/TopDownHouse_DoorsAndWindows.png" id="2_0ms3c"]
 [ext_resource type="Texture2D" uid="uid://tpauy77wj2b2" path="res://assets/sprites/top-down/house-interior/4 Walls, Floor & Doors.png" id="3_51p05"]
 [ext_resource type="PackedScene" uid="uid://stj5tl71jdmg" path="res://components/boy_player_top_down.tscn" id="5_suvjs"]
@@ -1901,6 +1902,9 @@ size = Vector2(68, 51)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otpbk"]
 size = Vector2(63, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_600hb"]
+size = Vector2(20, 58)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ueq6"]
 size = Vector2(97, 14)
 
@@ -1909,6 +1913,7 @@ size = Vector2(24, 63)
 
 [node name="LevelHouse" type="Node2D"]
 position = Vector2(83, 34)
+script = ExtResource("1_lo6tn")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(6, -12)
@@ -1953,7 +1958,7 @@ layer_5/z_index = 5
 layer_5/tile_data = PackedInt32Array()
 
 [node name="BoyPlayer" parent="." instance=ExtResource("5_suvjs")]
-position = Vector2(37, 78)
+position = Vector2(46, 73)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="BoyPlayer"]
@@ -2031,6 +2036,11 @@ shape = SubResource("RectangleShape2D_bv1kf")
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Colliders"]
 position = Vector2(806.5, 260)
 shape = SubResource("RectangleShape2D_otpbk")
+
+[node name="TimerCollision" type="CollisionShape2D" parent="Colliders"]
+unique_name_in_owner = true
+position = Vector2(-75.9043, 72)
+shape = SubResource("RectangleShape2D_600hb")
 
 [node name="CollidersConditional" type="StaticBody2D" parent="."]
 collision_layer = 2
