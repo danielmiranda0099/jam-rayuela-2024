@@ -33,11 +33,19 @@ func _process(_delta):
 
 			print(scene_name)
 			var scene_data = data[scene_name]
+			var scene_data_history: Array = []
 			for key in scene_data.keys():
-				if(key.contains("TEXT")):
-					print(scene_data[key])
-					text_typing_controller(scene_data[key])
-
+				if (not scene_data_history.has(key)):
+					scene_data_history.append(key)
+					if(key.contains("TEXT")):
+						print(scene_data[key])
+						text_typing_controller(scene_data[key])
+					if(key.contains("GO")):
+						var new_scene = load(scene_data[key]).instantiate()
+						MAIN_global.change_scene(new_scene)
+						queue_free()
+					if(key.contains("WAIT")):
+						await event_finish
 
 			await event_finish
 		

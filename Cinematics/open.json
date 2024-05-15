@@ -69,5 +69,13 @@
       "Desde el evento de la voz, Empezo un evento de paranoia colectiva, por una semana todos tuvimos una misma pesadilla que variva entre indivuduo pero en esencia era la misma, la voz de truenos metalicosa  de un ser gigantesto con miles de ojos y de forma indescrioptible",
       "Me desperte de la misma pesadila del ser de mil formas, asustado me dirigi al cuarto de mis padres"
     ]
+  },
+  "SCENE_10": {
+    "TYPE": "text",
+    "TEXT": [
+      "Pero no pude creer lo que veian mis ojos, Mi padre estaba desmenbrado sobre la cama y mi madre estaba acostada en sulugar de la cama no se si dormida o muerta como mi padre, pero lo peor no era ese escenario. lo que me lleno de terror era la criatura de pesadilla que estaba en una esquina de la habitacion"
+    ],
+    "WAIT": "",
+    "GO": "res://Levels/level_house.tscn"
   }
 }
