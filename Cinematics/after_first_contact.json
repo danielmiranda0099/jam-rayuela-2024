@@ -1,0 +1,33 @@
+{
+  "SCENE": {
+    "TYPE": "text",
+    "TEXT": [
+      "No recuerdo muy bien como Escape, lo que recuerdo es que me desperte en un camion militar, ellos me econtraron en la casa inconciente, pero solo yo seguia con vida. el repote solo decia que mi padre estaba muerto  el cuerpo de mi madre no fue allado."
+    ]
+  },
+  "SCENE_2": {
+    "TYPE": "cinematic",
+    "ANIM": [
+      "%Animation",
+      "Idle"
+    ],
+    "TEXT": [
+      "Al parecer el suceso de esa noche de infierno fue por la llegada de algo deconocido a la tierra, El reporte oficial es que un OBJETO  desconocido aparecio de la nada en la casa blanca (en estados unidos como siempre) y que sus militares lograron acabar con el objetivo."
+    ]
+  },
+  "SCENE_3": {
+    "TYPE": "text",
+    "TEXT": [
+      "se sabe que los gringos no fueron la causa por la que el objeto se fue, el objeto asi como aperecio se fue, pero ya sabes 'orgullo nacional'",
+      "La teoria dice que el objeto es la misma entidad de las pesadillas y que en su intancia en la tierra hizo nonexion con nuestras mentes y nos maldijo a todos. "
+    ]
+  }
+  ,
+  "SCENE_4": {
+    "TYPE": "text",
+    "TEXT": [
+      "se sabe que los gringos no fueron la causa por la que el objeto se fue, el objeto asi como aperecio se fue, pero ya sabes 'orgullo nacional'",
+      "La teoria dice que el objeto es la misma entidad de las pesadillas y que en su intancia en la tierra hizo nonexion con nuestras mentes y nos maldijo a todos. "
+    ]
+  }
+}
