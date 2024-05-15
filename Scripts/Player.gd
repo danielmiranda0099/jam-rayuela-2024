@@ -110,7 +110,8 @@ func MagicEffect(area) -> void:
 
 	var new_scene = load("res://Levels/cinematic_controller.tscn").instantiate()
 	new_scene.path_data = "res://Cinematics/test.json"
-	MAIN_global.change_scene(new_scene)
+	queue_free()
+	MAIN_global.change_scene(new_scene, true)
 
 
 	
