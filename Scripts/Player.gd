@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED: int = 130
 
-var is_move_on = true
+var is_movement = true
 var is_move_on_break_ladder = false
 
 const pre_magic_effect = preload("res://components/effects/effect_magic.tscn")
@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(_delta):
-	if is_move_on:
+	if is_movement:
 		self.velocity = Vector2.ZERO
 		var direction = Input.get_vector("left", "right", "up", "down")
 
@@ -62,7 +62,7 @@ func _on_area_area_entered(area:Area2D):
 		var handle_function = area.get_meta("HandleFunction")
 		
 		if(handle_function == "break_ladder"):
-			is_move_on = false
+			is_movement = false
 			is_move_on_break_ladder = true
 
 	if (area.get_parent().has_meta("MagicEffect")):
@@ -89,12 +89,12 @@ func move_on_break_ladder_finish():
 	$Area/Collision.disabled = false
 	self.z_index = 0
 
-	is_move_on = true
+	is_movement = true
 	is_move_on_break_ladder = false
 
 
 func MagicEffect(area) -> void:
-	is_move_on = false
+	is_movement = false
 	self.velocity = Vector2.ZERO
 	var magic_effect = pre_magic_effect.instantiate()
 
