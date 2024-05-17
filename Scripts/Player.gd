@@ -1,6 +1,9 @@
 extends CharacterBody2D
+class_name Player
 
 @export var SPEED: int = 130
+
+signal on_movement(state)
 
 var is_movement = true
 var is_move_on_break_ladder = false
@@ -8,7 +11,7 @@ var is_move_on_break_ladder = false
 const pre_magic_effect = preload("res://components/effects/effect_magic.tscn")
 
 func _ready():
-	pass # Replace with function body.
+	on_movement.connect(on_player_on_movement)
 
 func _physics_process(_delta):
 	if is_movement:
@@ -63,6 +66,7 @@ func _on_area_area_entered(area:Area2D):
 		
 		if(handle_function == "break_ladder"):
 			is_movement = false
+			on_movement.emit()
 			is_move_on_break_ladder = true
 
 	if (area.get_parent().has_meta("MagicEffect")):
@@ -112,6 +116,10 @@ func MagicEffect(area) -> void:
 	new_scene.path_data = "res://Cinematics/after_first_contact.json"
 	queue_free()
 	MAIN_global.change_scene(new_scene, true)
+
+func on_player_on_movement(state):
+	print("signal on movement :", state)
+	is_movement = state
 
 
 	
