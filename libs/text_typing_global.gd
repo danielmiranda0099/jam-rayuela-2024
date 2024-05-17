@@ -5,6 +5,7 @@ signal ui_accept_event
 
 var is_resume_text: bool = false
 var is_typing: bool = false
+var is_finish_typing: bool = false
 
 func text_typing(texts: Array, label: Label, audio: AudioStreamPlayer2D, audio_finish = null) -> void:
 	for text in texts:
@@ -35,6 +36,8 @@ func text_typing(texts: Array, label: Label, audio: AudioStreamPlayer2D, audio_f
 
 		await get_tree().create_timer(0.5).timeout
 	
+	is_finish_typing = true
+	print("finish")
 	finish_typing_event.emit()
 
 func _input(event: InputEvent) -> void:
