@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgsm2427awuka"]
+
+[ext_resource type="Script" path="res://libs/text_media_typewriter_controller.gd" id="1_415hp"]
+
+[node name="text_media_typewriter_controller" type="Node"]
+script = ExtResource("1_415hp")
