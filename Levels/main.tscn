@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd4tg0wvwdevc"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_udnhq"]
-[ext_resource type="PackedScene" uid="uid://dgk5ri4ljt3dr" path="res://Levels/cinematic_controller.tscn" id="2_hmdji"]
+[ext_resource type="PackedScene" uid="uid://dgk5ri4ljt3dr" path="res://Levels/level_open.tscn" id="2_hmdji"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_udnhq")
 
 [node name="ContentScenes" type="Node2D" parent="."]
 
-[node name="CinematicController" parent="ContentScenes" instance=ExtResource("2_hmdji")]
+[node name="LevelOpen" parent="ContentScenes" instance=ExtResource("2_hmdji")]
 path_data = "res://Cinematics/open.json"

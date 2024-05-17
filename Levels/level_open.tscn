@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dgk5ri4ljt3dr"]
 
-[ext_resource type="Script" path="res://Scripts/cinematic-controller.gd" id="1_stjcw"]
+[ext_resource type="Script" path="res://Scripts/level_open.gd" id="1_rqqo6"]
 [ext_resource type="PackedScene" uid="uid://cxo618sv13347" path="res://Levels/test-animation.tscn" id="2_uainl"]
 [ext_resource type="AudioStream" uid="uid://wruqru5iuuxv" path="res://assets/audio/effects/type-writing-machine/type-writing-1.mp3" id="3_udb2t"]
 [ext_resource type="AudioStream" uid="uid://bxmpd7ccin2fe" path="res://assets/audio/effects/type-writing-machine/type-writing-2.mp3" id="4_bh2kw"]
@@ -29,10 +29,11 @@ stream_5/weight = 1.0
 stream_6/stream = ExtResource("9_4pvco")
 stream_6/weight = 1.0
 
-[node name="CinematicController" type="Node2D"]
-script = ExtResource("1_stjcw")
+[node name="LevelOpen" type="Node2D"]
+script = ExtResource("1_rqqo6")
 
 [node name="AnimationViewportContainer" type="SubViewportContainer" parent="."]
+unique_name_in_owner = true
 clip_contents = true
 offset_left = 91.0
 offset_top = 8.0
@@ -76,7 +77,9 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_muiel")
 
 [node name="AudioFinish" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("10_f7tk8")
