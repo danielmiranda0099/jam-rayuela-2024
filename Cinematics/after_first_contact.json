@@ -5,6 +5,7 @@
       "No recuerdo muy bien como Escape, lo que recuerdo es que me desperte en un camion militar, ellos me econtraron en la casa inconciente, pero solo yo seguia con vida. el repote solo decia que mi padre estaba muerto  el cuerpo de mi madre no fue allado."
     ]
   },
+
   "SCENE_2": {
     "TYPE": "cinematic",
     "ANIM": [
@@ -15,19 +16,33 @@
       "Al parecer el suceso de esa noche de infierno fue por la llegada de algo deconocido a la tierra, El reporte oficial es que un OBJETO  desconocido aparecio de la nada en la casa blanca (en estados unidos como siempre) y que sus militares lograron acabar con el objetivo."
     ]
   },
+
   "SCENE_3": {
     "TYPE": "text",
     "TEXT": [
       "se sabe que los gringos no fueron la causa por la que el objeto se fue, el objeto asi como aperecio se fue, pero ya sabes 'orgullo nacional'",
       "La teoria dice que el objeto es la misma entidad de las pesadillas y que en su intancia en la tierra hizo nonexion con nuestras mentes y nos maldijo a todos. "
     ]
-  }
-  ,
+  },
+
   "SCENE_4": {
+    "TYPE": "cinematic",
+    "ANIM": [
+      "%Animation",
+      "Idle"
+    ],
+    "TEXT": [
+      "para combatir este conflicto global se unieron todas las potencias del mundo para la creacion de ONE PIECE, una organizacion capaz de exterminar los moustruos y regresar a las personas a la normalidad."
+    ]
+  },
+
+  "SCENE_5": {
     "TYPE": "text",
     "TEXT": [
-      "se sabe que los gringos no fueron la causa por la que el objeto se fue, el objeto asi como aperecio se fue, pero ya sabes 'orgullo nacional'",
-      "La teoria dice que el objeto es la misma entidad de las pesadillas y que en su intancia en la tierra hizo nonexion con nuestras mentes y nos maldijo a todos. "
-    ]
+      "La maldicion no solo rompio la conexio de las personas con la realidad infundiendolas en un suelo profundo, si no que ciertas personas despertaron habilidades psquicos dandoles la capacidad de luchar contra los moustruos.",
+      "Una de esas persona fue yo, ONE PIECE me recluto."
+    ],
+    "WAIT": "",
+    "GO": "res://Levels/level_school.tscn"
   }
 }
