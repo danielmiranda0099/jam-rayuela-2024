@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MAIN_global="*res://Scripts/main.gd"
+TEXT_TYPING_global="*res://libs/text_typing_global.gd"
 
 [display]
 
