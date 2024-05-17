@@ -108,7 +108,7 @@ func MagicEffect(area) -> void:
 
 	await get_tree().create_timer(9).timeout
 
-	var new_scene = load("res://Levels/cinematic_controller.tscn").instantiate()
+	var new_scene = load("res://Levels/level_open.tscn").instantiate()
 	new_scene.path_data = "res://Cinematics/after_first_contact.json"
 	queue_free()
 	MAIN_global.change_scene(new_scene, true)
