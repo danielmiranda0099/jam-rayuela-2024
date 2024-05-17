@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d4koyp5hu0mxa"]
+[gd_scene load_steps=34 format=3 uid="uid://d4koyp5hu0mxa"]
 
 [ext_resource type="Script" path="res://Scripts/level_school.gd" id="1_77244"]
 [ext_resource type="Texture2D" uid="uid://uqqupjfeb846" path="res://assets/sprites/top-down/school/CoolSchool_tileset.png" id="1_er1ce"]
@@ -13,7 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://bm2sweaiws1bg" path="res://assets/audio/effects/type-writing-machine/type-writing-5.mp3" id="11_5rfh8"]
 [ext_resource type="AudioStream" uid="uid://8sdvlcl8sdg0" path="res://assets/audio/effects/type-writing-machine/type-writing-6.mp3" id="12_qow47"]
 [ext_resource type="AudioStream" uid="uid://dpvkashdlj4ea" path="res://assets/audio/effects/type-writing-machine/type-writing-7.mp3" id="13_prtld"]
+[ext_resource type="Script" path="res://Scripts/window-text-event.gd" id="14_e5arh"]
 [ext_resource type="Texture2D" uid="uid://ci3edrauvu64v" path="res://assets/sprites/icons/exclamacion.png" id="14_lr0f4"]
+[ext_resource type="Texture2D" uid="uid://uyyufrh686fv" path="res://assets/sprites/borders/Border All 1.png" id="15_pcmuk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ekga2"]
 texture = ExtResource("1_er1ce")
@@ -704,7 +706,7 @@ stream_6/stream = ExtResource("13_prtld")
 stream_6/weight = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qm6o7"]
-size = Vector2(33, 36)
+size = Vector2(40, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kir1m"]
 size = Vector2(34, 50)
@@ -782,7 +784,7 @@ layer_4/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("3_m1prv")]
 unique_name_in_owner = true
-position = Vector2(170, 191)
+position = Vector2(171, 181)
 scale = Vector2(2, 2)
 
 [node name="SaraFullSheet" type="Sprite2D" parent="."]
@@ -794,7 +796,6 @@ frame = 28
 
 [node name="TextWindow" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="Control" type="HBoxContainer" parent="TextWindow"]
 anchors_preset = 12
@@ -848,36 +849,98 @@ stream = SubResource("AudioStreamRandomizer_m6d06")
 
 [node name="Book" type="Area2D" parent="."]
 position = Vector2(127, 180)
+script = ExtResource("14_e5arh")
 
-[node name="Sprite2D" type="Sprite2D" parent="Book"]
+[node name="Sprite" type="Sprite2D" parent="Book"]
 z_index = 1
 texture = ExtResource("1_er1ce")
 region_enabled = true
 region_rect = Rect2(200, 552, 28, 23)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Book"]
-position = Vector2(5.5, -8)
+[node name="Collision" type="CollisionShape2D" parent="Book"]
+position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_qm6o7")
 
-[node name="Exclamacion" type="Sprite2D" parent="Book"]
+[node name="Icon" type="Sprite2D" parent="Book"]
+visible = false
 position = Vector2(3, -19)
 scale = Vector2(0.111111, 0.111111)
 texture = ExtResource("14_lr0f4")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Book"]
+[node name="WindowTextEvent" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="Label" type="Label" parent="Book/CanvasLayer"]
+[node name="Label" type="Label" parent="WindowTextEvent"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -23.0
-offset_right = 20.0
+offset_left = -133.0
+offset_top = -63.0
+offset_right = 139.0
+offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "esto es tan solo un parrafo un poco largo esto es tan solo un parrafo un poco largo esto es tan solo un parrafo un poco largo esto es tan solo un parrafo unpoco largo
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+text_overrun_behavior = 2
+
+[node name="Border" type="Control" parent="WindowTextEvent"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="WindowTextEvent/Border"]
+position = Vector2(-136, -40)
+texture = ExtResource("15_pcmuk")
+region_enabled = true
+region_rect = Rect2(64, 384, 16, 64)
+
+[node name="Sprite2D2" type="Sprite2D" parent="WindowTextEvent/Border"]
+position = Vector2(4, -66)
+scale = Vector2(8.25, 1)
+texture = ExtResource("15_pcmuk")
+region_enabled = true
+region_rect = Rect2(80, 387, 32, 6)
+
+[node name="Sprite2D4" type="Sprite2D" parent="WindowTextEvent/Border"]
+position = Vector2(4.00001, -15)
+scale = Vector2(8.25, 1)
+texture = ExtResource("15_pcmuk")
+region_enabled = true
+region_rect = Rect2(80, 387, 32, 6)
+
+[node name="Sprite2D3" type="Sprite2D" parent="WindowTextEvent/Border"]
+position = Vector2(144, -40)
+texture = ExtResource("15_pcmuk")
+region_enabled = true
+region_rect = Rect2(112, 384, 16, 64)
+
+[node name="ColorRect" type="ColorRect" parent="WindowTextEvent/Border"]
+z_index = -1
+layout_mode = 0
+offset_left = -136.0
+offset_top = -65.0
+offset_right = 144.0
+offset_bottom = -14.0
+color = Color(0.360784, 0.360784, 0.360784, 0.533333)
+
+[node name="TextureRect" type="TextureRect" parent="WindowTextEvent"]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 
@@ -928,3 +991,6 @@ shape = SubResource("RectangleShape2D_b4362")
 [node name="CollisionShape2D12" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(370, 307)
 shape = SubResource("RectangleShape2D_4slhx")
+
+[connection signal="area_entered" from="Book" to="Book" method="_on_area_entered"]
+[connection signal="area_exited" from="Book" to="Book" method="_on_area_exited"]
