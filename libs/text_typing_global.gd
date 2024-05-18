@@ -6,10 +6,15 @@ signal ui_accept_event
 var is_resume_text: bool = false
 var is_typing: bool = false
 var is_finish_typing: bool = false
+var is_cancel_typing: bool = false
 
 func text_typing(texts: Array, label: Label, audio: AudioStreamPlayer2D, audio_finish = null) -> void:
+	is_cancel_typing = false
 	for text in texts:
 		is_typing = true
+		if is_cancel_typing:
+			print("cancelando typing 1")
+			break
 
 		for letter in text:
 			label.text += letter
@@ -18,6 +23,10 @@ func text_typing(texts: Array, label: Label, audio: AudioStreamPlayer2D, audio_f
 			if is_resume_text:
 				is_resume_text = false
 				is_typing = false
+				break
+
+			if is_cancel_typing:
+				print("cancelando typing 2")
 				break
 			
 			await get_tree().create_timer(0.06).timeout

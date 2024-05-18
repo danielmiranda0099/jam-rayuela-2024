@@ -66,7 +66,7 @@ func _on_area_area_entered(area:Area2D):
 		
 		if(handle_function == "break_ladder"):
 			is_movement = false
-			on_movement.emit()
+			# on_movement.emit()
 			is_move_on_break_ladder = true
 
 	if (area.get_parent().has_meta("MagicEffect")):
