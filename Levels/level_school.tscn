@@ -870,7 +870,7 @@ texture = ExtResource("14_lr0f4")
 [node name="WindowTextEvent" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Label" type="Label" parent="WindowTextEvent"]
+[node name="Text" type="Label" parent="WindowTextEvent"]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -885,7 +885,7 @@ grow_vertical = 0
 size_flags_vertical = 8
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 9
-text = "esto es tan solo un parrafo un poco largo esto es tan solo un parrafo un poco largo esto es tan solo un parrafo un poco largo esto es tan solo un parrafo unpoco largo
+text = "
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -941,6 +941,9 @@ color = Color(0.360784, 0.360784, 0.360784, 0.533333)
 [node name="TextureRect" type="TextureRect" parent="WindowTextEvent"]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="WindowTextEvent"]
+stream = SubResource("AudioStreamRandomizer_m6d06")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
 

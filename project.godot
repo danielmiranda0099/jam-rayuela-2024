@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MAIN_global="*res://Scripts/main.gd"
 TEXT_TYPING_global="*res://libs/text_typing_global.gd"
+EVENTS_HANDLER_global="*res://libs/events_handler_global.gd"
 
 [display]
 
